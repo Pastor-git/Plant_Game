@@ -1,4 +1,4 @@
-public class Plant {
+public class Plant implements Decisions {
 
     boolean life;
     String name;
@@ -18,4 +18,17 @@ public class Plant {
         this.name = name;
         this.life = life;
     }
+
+    public void addwater() {
+    Weather.WATER.level += 2;
+    }
+
+    public void killworm() {
+        Weather.WORM.setLevel(0);
+    }
+
+    public void adfertilizer() {
+    Weather.FERTILIZER.level +=  2;
+    }
+
 }
