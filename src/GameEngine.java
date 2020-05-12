@@ -1,26 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameEngine implements Decisions {
-
-
-
-
-    @Override
-    public void addwater() {
-
-    }
-
-    @Override
-    public void killworm() {
-
-    }
-
-    @Override
-    public void adfertilizer() {
-
-    }
-
+public class GameEngine {
 
     public static void main(String[] args) {
 
@@ -51,8 +32,25 @@ public class GameEngine implements Decisions {
         System.out.println("Dodaj nawozu - 2");
         System.out.println("Zabij robaki - 3");
 
-        Weather.WORM.level = Weather.WORM.level + 2;
         System.out.println(Weather.WORM.name() + " " + Weather.WORM.level);
 
+        int i = ruch.nextInt();
+        switch (i) {
+            case 1:
+                plant1.addwater();
+                break;
+            case 2:
+                plant1.adfertilizer();
+                break;
+            case 3:
+                plant1.killworm();
+                break;
+            default:
+            System.out.println("za bardzo kombinujesz - game over, zacznij jeszcze raz");
+            ruch.close();
+        }
+        for (Weather lvl : Weather.values()) {
+            System.out.println(lvl + " " + lvl.level);
+        }
     }
 }
